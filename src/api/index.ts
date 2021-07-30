@@ -1,5 +1,7 @@
-const MESSAGE = import.meta.env.VITE_MESSAGE
+import axios from "axios"
+//const APP_HOST = import.meta.env.VITE_APP_HOST;
 
-export function getName(): string {
-	return MESSAGE
+export async function getName(): Promise<string> {
+	const response = await axios.get('/me');
+	return response.data.result
 }
