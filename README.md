@@ -5,8 +5,7 @@ We wanted to add
 * environment variables
 * ajax testing
 
-To run :
-
+# install
 in the project home :
 
 ```shell
@@ -20,8 +19,25 @@ $ npm install
 $ npm run build
 ```
 
+# test
 then in the project home : 
 
 ```shell
 $ npx jest
+```
+
+# run dev server
+
+run the backend with 
+
+```shell
+$ ./server.py
+```
+
+It will return files in the project and the `me.json` file.
+
+then run the frontend with :
+
+```shell
+$ npm run dev
 ```
