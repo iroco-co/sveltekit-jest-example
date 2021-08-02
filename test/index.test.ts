@@ -9,7 +9,7 @@ import { tick } from 'svelte';
 
 describe('Index page', () => {
 	const server = setupServer(
-		rest.get('/me', (req, res, ctx) => {
+		rest.get('/me.json', (req, res, ctx) => {
 			return res(ctx.json({result: 'Foo'}))
 		})
 	)
