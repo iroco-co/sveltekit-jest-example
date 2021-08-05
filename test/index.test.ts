@@ -2,10 +2,9 @@
  * @jest-environment jsdom
  */
 import Index from '$/routes/index.svelte';
-import { render } from '@testing-library/svelte';
+import { render, waitFor } from '@testing-library/svelte';
 import { setupServer } from 'msw/node';
 import { rest } from 'msw';
-import { tick } from 'svelte';
 
 describe('Index page', () => {
 	const server = setupServer(
@@ -19,8 +18,6 @@ describe('Index page', () => {
 
 	test('Welcome the user', async () => {
 		const { getByText } = render(Index);
-		await tick()
-
-		expect(await getByText('Welcome to SvelteKit Foo')).toBeInTheDocument();
+		await waitFor(() => expect(getByText('Welcome to SvelteKit Foo')).toBeInTheDocument());
 	})
 })
