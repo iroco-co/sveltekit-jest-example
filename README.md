@@ -12,13 +12,6 @@ in the project home :
 $ npm install
 ```
 
-go under node_modules/jest-chain-transform then build
-
-```shell
-$ npm install
-$ npm run build
-```
-
 # test
 then in the project home : 
 
